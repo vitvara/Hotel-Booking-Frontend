@@ -1,0 +1,14 @@
+.pending {
+    background-color: rgb(238, 238, 238);
+    opacity: 0.7;
+}
+
+.reserved {
+    background-color: rgb(197, 101, 101);
+    opacity: 0.7;
+}
+
+.card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
