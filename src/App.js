@@ -6,6 +6,7 @@ import Home from './pages/home';
 import RoomDis from './pages/roomDis';
 import { Nav } from 'react-bootstrap';
 import NavBar from './components/NavBar';
+import LogIn from './pages/login';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           
           <Route path="/room-booking" element={<RoomDis />}/>
+          <Route path="/login" element={<LogIn/>}/>
           <Route path="/*" element={<Home />}/>
         </Routes>
       </BrowserRouter>

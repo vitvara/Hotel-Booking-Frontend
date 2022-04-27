@@ -14,35 +14,39 @@ const RoomCard = (props) => {
     else if (status === "pending") return classes.pending;
     else return classes.reserved;
   };
-  
+
+  const bookHandler = () => {
+    console.log("booked");
+  };
+
   return (
     <div className={classes.card}>
       <Card className={displayStatus()}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            src={require("../static/image/room.jpg")}
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {props.roomNum + props.building}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              guest: {props.maxGuest} | bed: {props.bed} | type: {props.type} | floor: {props.floor}
-            </Typography>
-            <hr/>
-            <Typography variant="body1" color="text.secondary">
-              Price: {props.price}฿
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          src={require("../static/image/room.jpg")}
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {props.roomNum + props.building}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            guest: {props.maxGuest} | bed: {props.bed} | type: {props.type} |
+            floor: {props.floor}
+          </Typography>
+          <hr />
+          <Typography variant="body1" color="text.secondary">
+            Price: {props.price}฿
+          </Typography>
+        </CardContent>
+
         <CardActions>
           {!(status === "avaliable") ? (
             status
           ) : (
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" onClick={bookHandler}>
               Book Now
             </Button>
           )}
